@@ -5,12 +5,12 @@ using UnityEngine;
 public class AntiGravity : MonoBehaviour
 {
     ColorHandler colorHandler;
-    MeshRenderer myMeshRenderer;
+    ParticleSystemRenderer myParticleSystemRenderer;
 
     private void Start()
     {
         colorHandler = FindObjectOfType<ColorHandler>();
-        myMeshRenderer = GetComponent<MeshRenderer>();
+        myParticleSystemRenderer = GetComponent<ParticleSystemRenderer>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,11 +19,11 @@ public class AntiGravity : MonoBehaviour
 
     private void ReverseGravity(Collider2D collision)
     {
-        ParticleSystem.MainModule main = GetComponent<ParticleSystem>().main;
-        Color gravityColor = main.startColor.color;
-        if (colorHandler.ColorMatch(gravityColor))
+        Color gravityColor = myParticleSystemRenderer.material.color;
+
+        if (colorHandler.ColorContain(gravityColor))
         {
-            float gravity = collision.gameObject.GetComponent<Rigidbody2D>().gravityScale;
+            float gravity = transform.rotation.z == 0f ? 1f : -1f;
             collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = -gravity;
         }
     }

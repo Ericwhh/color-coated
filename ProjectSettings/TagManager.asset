@@ -14,9 +14,9 @@ TagManager:
   - 
   - 
   - Player
-  - Door
+  - Exit
   - Paint
-  - Portal
+  - Gate
   - Gravity
   - Platform
   - 

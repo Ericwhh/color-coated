@@ -11,7 +11,6 @@ public class PaintPickup : MonoBehaviour
         colorHandler = FindObjectOfType<ColorHandler>();
         Color paintColor = GetComponent<MeshRenderer>().material.color;
         colorHandler.PlayerGainColor(paintColor);
-        // colorHandler.SetBackgroundColor();
         Destroy(gameObject);
     }
 }

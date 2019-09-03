@@ -85,6 +85,12 @@ public class ColorHandler : MonoBehaviour
         return playerColor == color;
     }
 
+    public bool ColorContain(Color color)
+    {
+        return playerColor.r >= color.r 
+            && playerColor.g >= color.g
+            && playerColor.b >= color.b;
+    }
     public void SetBackgroundColor() {
         Color dimColor = playerColor / 2f;
         dimColor.a = 1f;
