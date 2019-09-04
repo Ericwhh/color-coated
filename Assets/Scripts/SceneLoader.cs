@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] float delay = 2f;
     private void Start()
     {
         int currentSceneIndex = GetSceneIndex();
@@ -15,9 +16,16 @@ public class SceneLoader : MonoBehaviour
         int currentSceneIndex = GetSceneIndex();
         SceneManager.LoadScene(++currentSceneIndex);
     }
-    public void RestartLevelWithDelay(float seconds) {
+
+    public void LoadNextLevelWithDelay()
+    {
         int currentSceneIndex = GetSceneIndex();
-        StartCoroutine(Delay(currentSceneIndex, seconds));
+        StartCoroutine(Delay(++currentSceneIndex, delay));
+    }
+
+    public void RestartLevelWithDelay() {
+        int currentSceneIndex = GetSceneIndex();
+        StartCoroutine(Delay(currentSceneIndex, delay));
     }
 
     public void RestartLevel()

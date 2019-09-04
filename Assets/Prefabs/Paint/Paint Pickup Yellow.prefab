@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5642620232020770017, guid: dddbde5051f3fef448d5aa5209aaf0ea,
         type: 3}
       propertyPath: m_Name
-      value: Green Paint Pickup
+      value: Paint Pickup Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 5642620232020770029, guid: dddbde5051f3fef448d5aa5209aaf0ea,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 216fada8178f46d4e86f938627535619, type: 2}
+      objectReference: {fileID: 2100000, guid: add3b5b16280bfa4597d6ea2e2e022db, type: 2}
     - target: {fileID: 5642620232549479073, guid: dddbde5051f3fef448d5aa5209aaf0ea,
         type: 3}
       propertyPath: m_Color.g
@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 5642620232549479073, guid: dddbde5051f3fef448d5aa5209aaf0ea,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dddbde5051f3fef448d5aa5209aaf0ea, type: 3}

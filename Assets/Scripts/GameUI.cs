@@ -16,6 +16,34 @@ public class GameUI : MonoBehaviour
         UpdateLevelText();
     }
 
+    private void Update()
+    {
+        KeyboardPauseClick();
+        KeyboardRetryClick();
+    }
+
+    private void KeyboardRetryClick()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            RetryLevel();
+        }
+    }
+
+    private void KeyboardPauseClick()
+    {
+        if (Input.GetKeyDown("p"))
+        {
+            if (!isPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGame();
+            }
+        }
+    }
     private void UpdateLevelText()
     {
         int currentSceneIndex = sceneLoader.GetSceneIndex();

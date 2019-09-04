@@ -6,11 +6,13 @@ public class AntiGravity : MonoBehaviour
 {
     ColorHandler colorHandler;
     ParticleSystemRenderer myParticleSystemRenderer;
+    AudioSource audioSource;
 
     private void Start()
     {
         colorHandler = FindObjectOfType<ColorHandler>();
         myParticleSystemRenderer = GetComponent<ParticleSystemRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +27,7 @@ public class AntiGravity : MonoBehaviour
         {
             float gravity = transform.rotation.z == 0f ? 1f : -1f;
             collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = -gravity;
+            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
         }
     }
 }

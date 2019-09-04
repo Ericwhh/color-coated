@@ -7,12 +7,14 @@ public class Gate : MonoBehaviour
     ColorHandler colorHandler;
     MeshRenderer myMeshRenderer;
     BoxCollider2D myBoxCollider2D;
+    AudioSource audioSource;
 
     private void Start()
     {
         colorHandler = FindObjectOfType<ColorHandler>();
         myMeshRenderer = GetComponent<MeshRenderer>();
         myBoxCollider2D = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -34,6 +36,7 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
         colorHandler.PlayerLoseColor(myMeshRenderer.material.color);
     }
 }
