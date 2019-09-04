@@ -8,19 +8,25 @@ public class Player : MonoBehaviour
     [Tooltip("The height the player jumps.")] [SerializeField] float jumpHeight = 10f;
 
     Rigidbody2D myRigidbody2D;
+    GameUI gameUI;
+
     float raycastLength = 0.6f;
     float offset;
 
     void Start()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
+        gameUI = FindObjectOfType<GameUI>();
         offset = GetComponent<MeshRenderer>().bounds.size.x / 2f;
     }
 
     void Update()
     {
-        ControlRunning();
-        ControlJumping();
+        if (!gameUI.IsPaused())
+        {
+            ControlRunning();
+            ControlJumping();
+        }
     }
 
     private void ControlRunning() {
@@ -33,8 +39,8 @@ public class Player : MonoBehaviour
         Vector3 leftRay = transform.position - vectorOffset;
         Vector3 rightRay = transform.position + vectorOffset;
 
-        RaycastHit2D hitLeft = Physics2D.Raycast(leftRay, Vector3.down * gravity, raycastLength, LayerMask.GetMask("Platform", "Gate"));
-        RaycastHit2D hitRight = Physics2D.Raycast(rightRay, Vector3.down * gravity, raycastLength, LayerMask.GetMask("Platform", "Gate"));
+        RaycastHit2D hitLeft = Physics2D.Raycast(leftRay, Vector3.down * gravity, raycastLength, LayerMask.GetMask("Platform"));
+        RaycastHit2D hitRight = Physics2D.Raycast(rightRay, Vector3.down * gravity, raycastLength, LayerMask.GetMask("Platform"));
         if ((hitLeft || hitRight) && Input.GetAxisRaw("Jump") != 0)
         {
             myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x, Input.GetAxisRaw("Jump") * jumpHeight * gravity);

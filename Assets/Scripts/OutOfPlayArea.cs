@@ -6,6 +6,8 @@ public class OutOfPlayArea : MonoBehaviour
 {
     SceneLoader sceneLoader;
     [SerializeField] ParticleSystem deathEffect;
+    [SerializeField] float deathDelay = 2f;
+
     private void Start()
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
@@ -16,6 +18,6 @@ public class OutOfPlayArea : MonoBehaviour
         ParticleSystemRenderer renderer = particleSystem.GetComponent<ParticleSystemRenderer>();
         renderer.material.color = collision.gameObject.GetComponent<MeshRenderer>().material.color;
         Destroy(collision.gameObject);
-        sceneLoader.RestartLevel();
+        sceneLoader.RestartLevelWithDelay(deathDelay);
     }
 }
