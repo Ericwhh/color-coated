@@ -23,15 +23,15 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(Delay(++currentSceneIndex, delay));
     }
 
-    public void RestartLevelWithDelay() {
-        int currentSceneIndex = GetSceneIndex();
-        StartCoroutine(Delay(currentSceneIndex, delay));
-    }
-
     public void RestartLevel()
     {
         int currentSceneIndex = GetSceneIndex();
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void RestartLevelWithDelay() {
+        int currentSceneIndex = GetSceneIndex();
+        StartCoroutine(Delay(currentSceneIndex, delay));
     }
 
     public void LoadMainMenu() {

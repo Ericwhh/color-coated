@@ -27,7 +27,7 @@ public class AntiGravity : MonoBehaviour
         {
             float gravity = transform.rotation.z == 0f ? 1f : -1f;
             collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = -gravity;
-            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume());
         }
     }
 }

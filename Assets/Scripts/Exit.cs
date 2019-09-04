@@ -7,7 +7,6 @@ public class Exit : MonoBehaviour
     ColorHandler colorHandler;
     MeshRenderer myMeshRenderer;
     [SerializeField] SceneLoader sceneLoader;
-    [SerializeField] float delay = 2f;
     AudioSource audioSource;
     bool hasCollided = false;
 
@@ -24,7 +23,7 @@ public class Exit : MonoBehaviour
             hasCollided = true;
             sceneLoader = FindObjectOfType<SceneLoader>();
             sceneLoader.LoadNextLevelWithDelay();
-            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume());
         }
     }
 }

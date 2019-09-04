@@ -120,6 +120,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &12554388
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 909514228}
+    m_Modifications:
+    - target: {fileID: 2513550774974612903, guid: 789a5f786ba4d2c44894ed83408e64eb,
+        type: 3}
+      propertyPath: m_Name
+      value: Paint Pickup Blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 789a5f786ba4d2c44894ed83408e64eb, type: 3}
+--- !u!4 &12554389 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 12554388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &184516041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 2513550774974612907, guid: 6e27401dabaadf84cb7eddb4bc6afc13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2513550774974612907, guid: 6e27401dabaadf84cb7eddb4bc6afc13,
         type: 3}
@@ -300,56 +350,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1387940466}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &731880339
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 909514228}
-    m_Modifications:
-    - target: {fileID: 2513550774974612903, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-        type: 3}
-      propertyPath: m_Name
-      value: Paint Pickup Red
-      objectReference: {fileID: 0}
-    - target: {fileID: 2513550774974612907, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2513550774974612907, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2513550774974612907, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2513550774974612907, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2513550774974612907, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2513550774974612907, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 720c3c8a96a5aed4783f6aeebf86cee0, type: 3}
---- !u!4 &731880340 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2513550774974612907, guid: 720c3c8a96a5aed4783f6aeebf86cee0,
-    type: 3}
-  m_PrefabInstance: {fileID: 731880339}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &909514227
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,9 +377,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 731880340}
   - {fileID: 1487388485}
   - {fileID: 191665031}
+  - {fileID: 12554389}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -602,7 +602,7 @@ PrefabInstance:
     - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2513550774974612907, guid: 789a5f786ba4d2c44894ed83408e64eb,
         type: 3}

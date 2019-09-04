@@ -36,7 +36,7 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume());
         colorHandler.PlayerLoseColor(myMeshRenderer.material.color);
     }
 }

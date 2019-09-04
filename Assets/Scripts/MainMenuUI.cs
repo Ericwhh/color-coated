@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -12,10 +13,20 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] GameObject startGameButton;
     [SerializeField] GameObject levelSelectButton;
 
+    [SerializeField] Slider sliderMusic;
+    [SerializeField] Slider sliderSFX;
+
+    MusicPlayer musicPlayer;
+
+    const float defaultMusicVolume = 0.5f;
+    const float defaultSFXVolume = 0.5f;
+
     private void Start()
     {
         ResetToStartingState();
         ShowLevelSelect();
+        musicPlayer = FindObjectOfType<MusicPlayer>();
+        musicPlayer.UpdateBGAudioLevel();
     }
 
     private static void ResetToStartingState()
@@ -27,6 +38,19 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenuCanvas.SetActive(false);
         optionsCanvas.SetActive(true);
+        SetVolumeSliderValues();
+    }
+
+    private void SetVolumeSliderValues()
+    {
+        if (PlayerPrefsController.HasSetSFXVolume())
+        {
+            sliderSFX.value = PlayerPrefsController.GetSFXVolume();
+        } 
+        if (PlayerPrefsController.HasSetMusicVolume())
+        {
+            sliderMusic.value = PlayerPrefsController.GetMusicVolume();
+        }
     }
 
     public void MainMenu() 
@@ -59,5 +83,15 @@ public class MainMenuUI : MonoBehaviour
                 buttons[level - 1].SetActive(false);
             }
         }
+    }
+    
+    public void UpdateMusicLevel() {
+        PlayerPrefsController.SetMusicVolume(sliderMusic.value);
+        musicPlayer.UpdateBGAudioLevel();
+    }
+
+    public void UpdateSFXLevel()
+    {
+        PlayerPrefsController.SetSFXVolume(sliderSFX.value);
     }
 }

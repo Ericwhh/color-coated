@@ -8,12 +8,14 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] GameObject pauseCanvas;
     SceneLoader sceneLoader;
+    MusicPlayer musicPlayer;
+
     private bool isPaused = false;
     
     private void Start()
     {
-        sceneLoader = FindObjectOfType<SceneLoader>();
         UpdateLevelText();
+        musicPlayer = FindObjectOfType<MusicPlayer>();
     }
 
     private void Update()
@@ -24,28 +26,32 @@ public class GameUI : MonoBehaviour
 
     private void KeyboardRetryClick()
     {
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
+            musicPlayer.PlaySFX(musicPlayer.GetClickSound());
             RetryLevel();
         }
     }
 
     private void KeyboardPauseClick()
     {
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)
             {
+                musicPlayer.PlaySFX(musicPlayer.GetClickSound());
                 PauseGame();
             }
             else
             {
+                musicPlayer.PlaySFX(musicPlayer.GetReturnSound());
                 ResumeGame();
             }
         }
     }
     private void UpdateLevelText()
     {
+        sceneLoader = FindObjectOfType<SceneLoader>();
         int currentSceneIndex = sceneLoader.GetSceneIndex();
         TextMeshProUGUI text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         text.text += currentSceneIndex;

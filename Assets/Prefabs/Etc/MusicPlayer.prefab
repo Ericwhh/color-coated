@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f14cec8ab2d84499130fdbd4140cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 8300000, guid: 720871fbdca67f14c8bbe0ecf49f4fac, type: 3}
-  backSound: {fileID: 8300000, guid: bdb31bb51a6aaca40ae311ebbaf96258, type: 3}
+  clickSound: {fileID: 8300000, guid: 43dbff7ee4c5fd248bc829dee1f607e8, type: 3}
+  returnSound: {fileID: 8300000, guid: 9d70580df894a0247a9c159cca971471, type: 3}
 --- !u!82 &6363879115542044901
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 472061647743cb04b97cb28043fac531, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
