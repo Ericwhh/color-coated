@@ -39,13 +39,25 @@ public class MainMenuUI : MonoBehaviour
     public void LevelSelect() {
         mainMenuCanvas.SetActive(false);
         levelSelectCanvas.SetActive(true);
+        HideUnreachedLevels();
     }
 
     private void ShowLevelSelect() {
-        if (PlayerPrefsController.BeatLevelOne())
+        if (PlayerPrefsController.ReachedLevelOne())
         {
             startGameButton.SetActive(false);
             levelSelectButton.SetActive(true);
+        }
+    }
+
+    private void HideUnreachedLevels() {
+        GameObject[] buttons = GameObject.FindGameObjectsWithTag("LevelSelect");
+        int numberOfLevels = buttons.Length;
+        for (int level = 1; level <= numberOfLevels; level++) {
+            if (!PlayerPrefsController.HasReachedLevel(level))
+            {
+                buttons[level - 1].SetActive(false);
+            }
         }
     }
 }
