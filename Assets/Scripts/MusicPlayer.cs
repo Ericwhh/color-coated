@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip clickSound;
     [SerializeField] AudioClip returnSound;
+    private float defaultMusicVolume = 5f;
+    private float defaultSFXVolume = 5f;
 
     private void Awake()
     {
@@ -22,6 +25,19 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         GetComponent<AudioSource>().Play();
+        SetDefaultVolume();
+    }
+
+    private void SetDefaultVolume()
+    {
+        if (!PlayerPrefsController.HasSetMusicVolume())
+        {
+            PlayerPrefsController.SetMusicVolume(defaultMusicVolume);
+        }
+        if (!PlayerPrefsController.HasSetSFXVolume())
+        {
+            PlayerPrefsController.SetSFXVolume(defaultSFXVolume);
+        }
     }
 
     public void UpdateBGAudioLevel() {
@@ -32,7 +48,7 @@ public class MusicPlayer : MonoBehaviour
         float prevTimeScale = Time.timeScale;
         Time.timeScale = 1f;
         DontDestroyOnLoad(clip);
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume());
+        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume() / 10f);
         Time.timeScale = prevTimeScale;
     }
 

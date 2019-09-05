@@ -18,15 +18,11 @@ public class MainMenuUI : MonoBehaviour
 
     MusicPlayer musicPlayer;
 
-    const float defaultMusicVolume = 0.5f;
-    const float defaultSFXVolume = 0.5f;
-
     private void Start()
     {
         ResetToStartingState();
         ShowLevelSelect();
         musicPlayer = FindObjectOfType<MusicPlayer>();
-        musicPlayer.UpdateBGAudioLevel();
     }
 
     private static void ResetToStartingState()

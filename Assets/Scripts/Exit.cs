@@ -23,7 +23,7 @@ public class Exit : MonoBehaviour
             hasCollided = true;
             sceneLoader = FindObjectOfType<SceneLoader>();
             sceneLoader.LoadNextLevelWithDelay();
-            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume());
+            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume() / 10f);
         }
     }
 }

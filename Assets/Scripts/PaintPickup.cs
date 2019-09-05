@@ -14,7 +14,7 @@ public class PaintPickup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ChangePlayerColor();
-        AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume());
+        AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume() / 10f);
         Destroy(gameObject);
     }
 

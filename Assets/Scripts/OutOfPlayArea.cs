@@ -24,7 +24,7 @@ public class OutOfPlayArea : MonoBehaviour
 
     private void CreateDeathSFX()
     {
-        AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume());
+        AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position, PlayerPrefsController.GetSFXVolume() / 10f);
     }
 
     private void CreateDeathVFX(Collider2D collision)
