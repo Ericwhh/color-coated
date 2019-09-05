@@ -59,17 +59,10 @@ public class ColorHandler : MonoBehaviour
         float newRedValue = playerColor.r + color.r;
         float newGreenValue = playerColor.g + color.g;
         float newBlueValue = playerColor.b + color.b;
-        if (newRedValue >= newGreenValue && newRedValue >= newBlueValue) {
-            playerColor = Color.red;
-        }
-        else if (newGreenValue >= newRedValue && newGreenValue >= newBlueValue)
-        {
-            playerColor = Color.green;
-        }
-        else if (newBlueValue >= newRedValue && newBlueValue >= newGreenValue)
-        {
-            playerColor = Color.blue;
-        }
+        newRedValue = Mathf.Max(newRedValue - 1f, 0);
+        newGreenValue = Mathf.Max(newGreenValue - 1f, 0);
+        newBlueValue = Mathf.Max(newBlueValue - 1f, 0);
+        playerColor = new Color(newRedValue, newGreenValue, newBlueValue);
     }
 
     public void PlayerLoseColor(Color color)
