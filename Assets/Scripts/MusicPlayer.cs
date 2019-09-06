@@ -24,8 +24,8 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        GetComponent<AudioSource>().Play();
         SetDefaultVolume();
+        GetComponent<AudioSource>().Play();
     }
 
     private void SetDefaultVolume()
@@ -38,6 +38,7 @@ public class MusicPlayer : MonoBehaviour
         {
             PlayerPrefsController.SetSFXVolume(defaultSFXVolume);
         }
+        UpdateBGAudioLevel();
     }
 
     public void UpdateBGAudioLevel() {
