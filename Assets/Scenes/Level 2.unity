@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 4560391851744560793, guid: 45dd5296811c7814b89a04fe262a02da,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4560391851744560793, guid: 45dd5296811c7814b89a04fe262a02da,
         type: 3}
@@ -382,7 +382,7 @@ PrefabInstance:
     - target: {fileID: 2513550774974612907, guid: 6e27401dabaadf84cb7eddb4bc6afc13,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2513550774974612907, guid: 6e27401dabaadf84cb7eddb4bc6afc13,
         type: 3}
@@ -539,7 +539,7 @@ PrefabInstance:
     - target: {fileID: 3299644942908627017, guid: cc2fdb1d244215648aa907acd0d88914,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: -7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc2fdb1d244215648aa907acd0d88914, type: 3}
@@ -652,7 +652,7 @@ PrefabInstance:
     - target: {fileID: 4560391851744560793, guid: 45dd5296811c7814b89a04fe262a02da,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4560391851744560793, guid: 45dd5296811c7814b89a04fe262a02da,
         type: 3}
@@ -746,13 +746,8 @@ PrefabInstance:
     - target: {fileID: 5475700049397896583, guid: dbeef84fd6a048a49b37c36f58d97369,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: -4.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5475700049397896584, guid: dbeef84fd6a048a49b37c36f58d97369,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 5475700048841253368, guid: dbeef84fd6a048a49b37c36f58d97369,
         type: 3}
       propertyPath: m_Color.r
@@ -773,6 +768,11 @@ PrefabInstance:
       propertyPath: m_LightVolumeOpacity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5475700049397896584, guid: dbeef84fd6a048a49b37c36f58d97369,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbeef84fd6a048a49b37c36f58d97369, type: 3}
 --- !u!1001 &5480061524558412907

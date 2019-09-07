@@ -71,6 +71,7 @@ public class GameUI : MonoBehaviour
     }
 
     public void RetryLevel() {
+        Time.timeScale = 1f;
         int currentSceneIndex = sceneLoader.GetSceneIndex();
         sceneLoader.LoadSelectedLevel(currentSceneIndex);
     }
