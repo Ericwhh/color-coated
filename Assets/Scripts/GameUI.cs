@@ -26,7 +26,7 @@ public class GameUI : MonoBehaviour
 
     private void KeyboardRetryClick()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !isPaused)
         {
             musicPlayer.PlaySFX(musicPlayer.GetClickSound());
             RetryLevel();
