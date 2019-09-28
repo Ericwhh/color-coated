@@ -1,7 +1,10 @@
 # Color-Coated
-A 2D platformer built with C#, using the [Unity](https://unity.com/) game engine. 
+A 2D puzzle-platformer built with C#, using the [Unity](https://unity.com/) game engine.
 
-## Gameplay
+## How to Play
+Please visit https://ericwhh.github.io/color-coated/ to access the game.
+
+### Gameplay
 <p>Players must traverse through a series of levels from point A to point B.</p> 
 <p>Based on the RGB color model, players pick up varying colors to match the exit. Obstacles will also be present in some levels and only activate if the player contains a certain color.</p>
 
